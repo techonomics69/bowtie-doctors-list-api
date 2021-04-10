@@ -1,0 +1,50 @@
+{
+	"name": "Django Python 3 & SQLite",
+	"dockerFile": "../docker/doctors-api/Dockerfile",
+	"context": "../src/",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+	"workspaceFolder": "/workspace",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.autopep8Path": "/usr/local/bin/autopep8",
+		"python.formatting.blackPath": "/usr/local/bin/black",
+		"python.formatting.yapfPath": "/usr/local/bin/yapf",
+		"python.linting.banditPath": "/usr/local/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/bin/pylint",
+		"python.testing.pytestPath": "/usr/local/bin/pytest",
+		"python.linting.pylintArgs": [
+			"--load-plugins=pylint_django",
+			"--django-settings-module=doctors_service.settings",
+	   	],
+		"sqlite.sqlite3": "/usr/bin/sqlite3"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-python.python",
+		"alexcvzz.vscode-sqlite"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8000],
+
+	"remoteEnv": {
+		"DJANGO_SUPERUSER_PASSWORD": "passalot",
+		"DJANGO_SUPERUSER_EMAIL": "admin@example.com",
+		"DJANGO_SUPERUSER_USERNAME": "admin"
+	},
+	"postCreateCommand": "python src/manage.py makemigrations && python src/manage.py migrate && python src/manage.py createsuperuser --noinput",
+	"postAttachCommand": "python src/manage.py loaddata doctors.yaml && python src/manage.py runserver",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "runner"
+}

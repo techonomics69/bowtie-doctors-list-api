@@ -1,0 +1,185 @@
+- model: doctors_api.doctor
+  pk: 1
+  fields:
+    name: 鍾景熹
+    tel: 1234567
+    district: 'N'
+    open_public_holidays: false
+- model: doctors_api.doctorlanguage
+  pk: 1
+  fields:
+    doctor: 1
+    bcp47: zh-hant
+- model: doctors_api.doctorlanguage
+  pk: 2
+  fields:
+    doctor: 1
+    bcp47: en
+- model: doctors_api.doctorlanguage
+  pk: 3
+  fields:
+    doctor: 1
+    bcp47: zh-cn
+- model: doctors_api.doctoropeninghours
+  pk: 1
+  fields:
+    doctor: 1
+    day: 1
+    open: '10:00'
+    close: '13:00'
+- model: doctors_api.doctoropeninghours
+  pk: 2
+  fields:
+    doctor: 1
+    day: 1
+    open: '14:00'
+    close: '18:00'
+- model: doctors_api.doctoropeninghours
+  pk: 3
+  fields:
+    doctor: 1
+    day: 2
+    open: '10:00'
+    close: '13:00'
+- model: doctors_api.doctoropeninghours
+  pk: 4
+  fields:
+    doctor: 1
+    day: 2
+    open: '14:00'
+    close: '18:00'
+- model: doctors_api.doctoraddresslanguage
+  pk: 1
+  fields:
+    doctor: 1
+    bcp47: en
+    address: SHOP 107, TIN YIU SHOPPING CENTIRE, TIN SHUI WAI, N.T.
+- model: doctors_api.doctorcharges
+  pk: 1
+  fields:
+    doctor: 1
+    category: d
+    price: '100.00'
+    currency: HKD
+    desc_en: Teeth washing
+    desc_yue: 洗牙
+    note_en: Toothpaste not included
+    note_yue: 不含牙膏
+
+
+- model: doctors_api.doctor
+  pk: 2
+  fields:
+    name: 謝建華
+    tel: 1234567
+    district: 'SSP'
+    open_public_holidays: true
+- model: doctors_api.doctorlanguage
+  pk: 4
+  fields:
+    doctor: 2
+    bcp47: zh-hant
+- model: doctors_api.doctoropeninghours
+  pk: 5
+  fields:
+    doctor: 2
+    day: 1
+    open: '10:00'
+    close: '20:00'
+- model: doctors_api.doctoropeninghours
+  pk: 6
+  fields:
+    doctor: 2
+    day: 2
+    open: '10:00'
+    close: '20:00'
+- model: doctors_api.doctoropeninghours
+  pk: 7
+  fields:
+    doctor: 2
+    day: 3
+    open: '10:00'
+    close: '20:00'
+- model: doctors_api.doctoropeninghours
+  pk: 8
+  fields:
+    doctor: 2
+    day: 4
+    open: '10:00'
+    close: '20:00'
+- model: doctors_api.doctoraddresslanguage
+  pk: 2
+  fields:
+    doctor: 2
+    bcp47: zh-hant
+    address: 新界元朗壽富街71號地下6號舖
+- model: doctors_api.doctorcharges
+  pk: 2
+  fields:
+    doctor: 2
+    category: cm
+    price: '1000.00'
+    currency: HKD
+    desc_en: Herbal Remedy
+    desc_yue: 草藥
+    note_en: Lorem Epsom
+    note_yue: 不含草
+
+
+- model: doctors_api.doctor
+  pk: 3
+  fields:
+    name: 華
+    tel: 456123
+    district: 'SSP'
+    open_public_holidays: true
+- model: doctors_api.doctorlanguage
+  pk: 5
+  fields:
+    doctor: 3
+    bcp47: zh-cn
+- model: doctors_api.doctoropeninghours
+  pk: 9
+  fields:
+    doctor: 3
+    day: 1
+    open: '08:00'
+    close: '20:00'
+- model: doctors_api.doctoropeninghours
+  pk: 10
+  fields:
+    doctor: 3
+    day: 2
+    open: '08:00'
+    close: '20:00'
+- model: doctors_api.doctoropeninghours
+  pk: 11
+  fields:
+    doctor: 3
+    day: 3
+    open: '08:00'
+    close: '20:00'
+- model: doctors_api.doctoropeninghours
+  pk: 12
+  fields:
+    doctor: 3
+    day: 4
+    open: '08:00'
+    close: '20:00'
+- model: doctors_api.doctoraddresslanguage
+  pk: 3
+  fields:
+    doctor: 3
+    bcp47: zh-hant
+    address: 新界屯門屯門醫院腦外科
+- model: doctors_api.doctorcharges
+  pk: 3
+  fields:
+    doctor: 3
+    category: a
+    price: '500.00'
+    currency: HKD
+    desc_en: Herbal Remedy
+    desc_yue: 草藥
+    note_en: Lorem Epsom
+    note_yue: 不含草
