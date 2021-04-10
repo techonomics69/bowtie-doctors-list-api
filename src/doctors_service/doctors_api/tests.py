@@ -3,8 +3,6 @@ Test cases of Doctors Service
 """
 from django.test import TestCase, Client
 from django.urls import reverse
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
 from rest_framework import status
 from .serializers import DoctorSerializer
 from .models import Doctor
@@ -12,18 +10,6 @@ from .models import Doctor
 
 # initialize the APIClient app
 client = Client()
-
-
-@api_view(['GET'])
-def get_doctor(request, pk):
-    try:
-        doctor = Doctor.objects.get(pk=pk)
-    except Doctor.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-
-    # get details of a single puppy
-    if request.method == 'GET':
-        return Response({})
 
 
 class GetAllDoctorsTest(TestCase):
