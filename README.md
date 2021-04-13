@@ -5,7 +5,7 @@ Doctors List API for Necktie
 Docker
 
 # Getting Started
-Simply open the project in VSCode using the devcontainer and navigate to http://localhost:8080/doctor!
+Simply open the project in VSCode using the devcontainer (with extension: ms-vscode-remote.remote-containers) and navigate to http://localhost:8080/doctor!
 
 # Alternatively
 - build the project for with `docker build --target prod -t ronaldslc/necktie-doctors-list-api -f docker/doctors-api/Dockerfile src` in the project root. 
